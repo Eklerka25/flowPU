@@ -1,9 +1,10 @@
 #include <iostream>
 #include <cstdint>
 
-#include <asm.hpp>
+#include <fasm/asm_mem.hpp>
+#include <fasm/asm_math.hpp>
 
 int main() {
-    write_mem(0, 0b11);
-    write << read_mem(0);
+    mem_write(0, math_inc(0b11));
+    write << mem_read(0);
 }
