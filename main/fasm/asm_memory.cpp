@@ -1,9 +1,10 @@
 #include <cstdint>
 #include <macros.hpp>
+#include <typedefs.hpp>
 
 #include <fasm/asm_math.hpp>
 
-int16_t mem[8] = {
+i16 mem[8] = {
     0b0000000000000000,
     0b0000000000000000,
     0b0000000000000000,
@@ -14,11 +15,11 @@ int16_t mem[8] = {
     0b0000000000000000,
 };
 
-int mem_write(int index, int16_t value) {
+int mem_write(int index, i16 value) {
     if (index < 8 && index >= 0) { mem[index] = value; }
 }
 
-int16_t mem_read(int index) {
+i16 mem_read(int index) {
     return mem[index];
 }
 
