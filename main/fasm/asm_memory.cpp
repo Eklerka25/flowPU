@@ -2,21 +2,18 @@
 #include <macros.hpp>
 #include <typedefs.hpp>
 
-#include <fasm/asm_math.hpp>
+#define MEM_SIZE 4096
 
-i16 mem[8] = {
-    0b0000000000000000,
-    0b0000000000000000,
-    0b0000000000000000,
-    0b0000000000000000,
-    0b0000000000000000,
-    0b0000000000000000,
-    0b0000000000000000,
-    0b0000000000000000,
-};
+i16 mem[MEM_SIZE];
+
+void mem_init(i16 value) {
+    for (int x = 0; x < MEM_SIZE; x++) {
+        mem[x] = value;
+    }
+}
 
 int mem_write(int index, i16 value) {
-    if (index < 8 && index >= 0) { mem[index] = value; }
+    if (index < MEM_SIZE && index >= 0) { mem[index] = value; }
 }
 
 i16 mem_read(int index) {
@@ -24,7 +21,7 @@ i16 mem_read(int index) {
 }
 
 void mem_dump() {
-    for (int x = 0; x < 8; x++) {
+    for (int x = 0; x < MEM_SIZE; x++) {
         mem[x] = 0b0000000000000000;
     }
 }
