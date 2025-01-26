@@ -2,7 +2,7 @@
 #include <macros.hpp>
 #include <typedefs.hpp>
 
-#define VMEM_SIZE 16
+#define VMEM_SIZE 2048
 
 i8 vmem[VMEM_SIZE][2];
 
@@ -14,7 +14,7 @@ void vmem_init(i8 value) {
 }
 
 int vmem_write(int index, i8 char_value, i8 color_value) {
-    if (index < 16 && index >= 0) {
+    if (index < VMEM_SIZE && index >= 0) {
         vmem[index][0] = char_value; 
         vmem[index][1] = color_value; 
     }
