@@ -2,7 +2,7 @@
 #include <macros.hpp>
 #include <typedefs.hpp>
 
-#define MEM_SIZE 8192
+#define MEM_SIZE 128000
 
 i16 mem[MEM_SIZE];
 
