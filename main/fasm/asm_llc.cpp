@@ -1,9 +1,12 @@
 #include <iostream>
+#include <conio.h>
 
 #include <cstdint>
 #include <macros.hpp>
 #include <typedefs.hpp>
 #include <cstdlib>
+
+#include <utils/fpu_charmap.hpp>
 
 void llc_halt() {
     while (1) {}
@@ -19,4 +22,8 @@ void llc_pause() {
 
 void llc_vmode_clear() {
     system("cls");
+}
+
+int llc_getchar() {
+    return fsvm_charmap_return_index(getch());
 }
