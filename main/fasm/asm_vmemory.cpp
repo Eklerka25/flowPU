@@ -2,7 +2,7 @@
 #include <macros.hpp>
 #include <typedefs.hpp>
 
-#define VMEM_SIZE 2048
+#define VMEM_SIZE 32000
 
 i8 vmem[VMEM_SIZE][2];
 
@@ -25,7 +25,7 @@ i8 vmem_read(int index, int btype) {
 }
 
 void vmem_dump() {
-    for (int x = 0; x < 8; x++) {
+    for (int x = 0; x < VMEM_SIZE; x++) {
         vmem[x][0] = 0b00000000;
         vmem[x][1] = 0b00000000;
     }
