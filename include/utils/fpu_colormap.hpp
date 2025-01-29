@@ -2,6 +2,7 @@
 
 enum fsvm_colors {
     RESET = 0,
+    UNDERLINE = 4,
     FG_BLACK = 90,
 
     FG_RED = 31,
